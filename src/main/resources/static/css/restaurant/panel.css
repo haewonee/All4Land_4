@@ -1,7 +1,5 @@
 .restaurant-row { display: flex; gap: 8px; align-items: stretch; }
 .restaurant-row .layer-toggle { flex: 1; }
-.restaurant-scope { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-.restaurant-scope .button { width: 100%; }
 .restaurant-panel .button {
     min-height: 48px;
     padding: 0 16px;
@@ -57,3 +55,10 @@
 .layer-toggle:has(input:checked) { border-color: var(--sage); background: #ffffff; font-weight: 700; }
 .layer-toggle input { width: 16px; height: 16px; margin: 0; accent-color: var(--sage); }
 .layer-toggle input:disabled { cursor: wait; }
+
+/* 전체 맛집 / 내 맛집: 맛집 추가하기 버튼과 구분되도록 탭(세그먼트) 형태 */
+.restaurant-panel .restaurant-scope { display: flex; gap: 4px; margin-top: 10px; padding: 4px; border-radius: 14px; background: var(--seg); }
+.restaurant-panel .restaurant-scope > .button { flex: 1; min-height: 36px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: var(--ink-3); font-size: 13px; font-weight: 500; box-shadow: none; }
+.restaurant-panel .restaurant-scope > .button:hover { color: var(--ink-2); }
+.restaurant-panel .restaurant-scope > .button[aria-pressed="true"] { background: #ffffff; color: var(--ink); font-weight: 700; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
+.restaurant-panel .restaurant-scope > .button:focus-visible { outline: 2px solid var(--sage); outline-offset: 1px; }
